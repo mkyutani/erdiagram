@@ -1,7 +1,8 @@
 # ERAlchemy - ER Diagram from Database
 
-Create a postgresql database by docker-compose-testpg.yml with tables in samples/sample-ddl.sql and make a ER diagram.
-![img/er.png]
+![ER diagram](img/er.png)
+
+Create a postgresql database by `docker-compose-testpg.yml` with tables in `samples/sample-ddl.sql` and make a ER diagram.
 
 ```
 $ docker compose -f docker-compose-testpg.yml up -d
@@ -15,25 +16,26 @@ $ docker compose -f docker-compose-testpg.yml down
 
 ## Build container
 
-Create a container 'eralchemy:latest'
+Build an docker image 'eralchemy:latest'
 
 ```
 $ ./build.sh
 ```
 
-## Usage: ./eralchemy.sh
+## Usage: `./eralchemy.sh`
+
+`./eralchemy.sh` build a data source name and create ER diagram by eralchemy container.
 
 ### Options
 
-* Data source
-  * --protocol: database protocol
-  * -s, --server: database server name
-  * -P, --port: database server port number
-  * -d, --database: database name
-  * -u, --user: database user name
-  * -p, --password: database user password
-* Container network
-  * -n, --network: container network to connect database server
-* Output
-  * -D, --dir: output directory (mkdir if it doesn't exist and share to container)
-  * o, --output: output file name (extension: pdf, png, er, etc.)
+| Category | Option | description |
+| ---- | ---- | ---- |
+| Container network | -n, --network | container network to connect database server |
+| Data source | --protocol | database protocol |
+|| -s, --server | database server name |
+|| -P, --port | database server port number |
+|| -d, --database | database name |
+|| -u, --user | database user name |
+|| -p, --password | database user password |
+| Output | -D, --dir | output directory (mkdir if it doesn't exist and share to container) |
+|| o, --output | output file name (extension: pdf, png, er, etc.) |
