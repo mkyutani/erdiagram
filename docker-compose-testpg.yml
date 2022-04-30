@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  db:
+    container_name: testpg
+    hostname: testpg
+    image: postgres:14-alpine
+    environment:
+      - "POSTGRES_USER=testuser"
+      - "POSTGRES_PASSWORD=testpw"
+      - "POSTGRES_DB=testdb"
+    volumes:
+      - ./samples:/docker-entrypoint-initdb.d
+    networks:
+      - testnw
+
+networks:
+  testnw:
+    name: testnw
+    driver: bridge

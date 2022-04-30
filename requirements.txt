@@ -1,0 +1,4 @@
+﻿eralchemy==1.2.10
+psycopg2
+pygraphviz
+sqlalchemy<1.4
