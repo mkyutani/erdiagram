@@ -15,7 +15,7 @@ PORT=""
 DATABASE="postgres"
 USER="$(id -un)"
 PASSWORD=""
-NETWORK="default"
+NETWORK="host"
 OUTPUT_FILE="er.png"
 
 usage() {

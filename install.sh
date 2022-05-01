@@ -4,4 +4,4 @@
 IMAGE="eralchemy"
 
 docker build . --tag ${IMAGE} --no-cache
-
+cp erdiagram /usr/local/bin
